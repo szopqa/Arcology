@@ -1,0 +1,112 @@
+﻿<Page x:Class="Arcology.Pages.SimulationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Arcology.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="425" d:DesignWidth="505"
+      Title="SimulationPage">
+
+    <Grid OpacityMask="#FF7C6A6A" Background="#FF918282">
+        <Slider x:Name="ParameterSlider" HorizontalAlignment="Center" Height="18.333" Margin="17,74,258.333,332.667" VerticalAlignment="Center" Width="229.667" Foreground="#FF9C9090"
+                Maximum="200" SmallChange="5" ValueChanged="SliderValueChanged" Background="#FF9C9090" Value="-1" BorderBrush="#FFE2BDBD"/>
+        <Label x:Name="SliderValueLbl" HorizontalAlignment="Left" Height="33" Margin="124,18,0,0" VerticalAlignment="Top" Width="109" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="ParameterLbl" Content ="Parameter: " HorizontalAlignment="Left" Height="33" Margin="10,18,0,0" VerticalAlignment="Top" Width="109" FontSize="18" FontWeight="Bold"/>
+
+        <!--Turn-->
+        <Image x:Name="TurnIcon" Margin="379,19,90,370" Source="/Images/calendar (1).png" Stretch="Fill">
+            <Image.ToolTip>
+                <TextBlock>Current turn</TextBlock>
+            </Image.ToolTip>
+        </Image>
+        <Label x:Name="TurnLbl" Content="{Binding Turn}" HorizontalAlignment="Left" Height="45" Margin="415,18,0,0" VerticalAlignment="Top" Width="80" FontSize="23"/>
+
+        <!--Score-->
+        <Image x:Name="ScoreIcon" Margin="379,72,90,309" Source="/Images/scoreboard.png" Stretch="Fill">
+            <Image.ToolTip>
+                <TextBlock>Event Score</TextBlock>
+            </Image.ToolTip>
+        </Image>
+        <Label x:Name="ScoreLbl" Content="{Binding Score}" VerticalAlignment="Top" FontSize="23" RenderTransformOrigin="0.732,0.963" Margin="415,72,0,0" Height="47"/>
+
+        <!-- Simulation values -->
+        <Grid HorizontalAlignment="Left" Height="255" Margin="10,131,0,0" VerticalAlignment="Top" Width="279">
+
+            <Image x:Name="FoodQuantityIcon" Margin="0,0,227.543,207.599" Source="/Images/groceries.png" Stretch="Fill" RenderTransformOrigin="-0.182,-0.047">
+                <Image.ToolTip>
+                    <TextBlock>Food Quantity</TextBlock>
+                </Image.ToolTip>
+            </Image>
+            <Label x:Name="FoodQuantityLbl" Content="{Binding FoodQuantity}"  Margin="57.035,9.401,143.965,207.599" FontSize="20"/>
+
+            <Image x:Name="PopulationIcon" Margin="0,62.856,227.543,142.817" Source="/Images/people.png" Stretch="Fill">
+                <Image.ToolTip>
+                    <TextBlock>Population</TextBlock>
+                </Image.ToolTip>
+            </Image>
+            <Label x:Name="PopulationLbl" Content="{Binding Population}"  Margin="57.035,76.275,151.965,142.817" FontSize="20" Width="70"/>
+
+            <Image x:Name="WasteIcon" Margin="0.578,128.407,226.965,77.628" Source="/Images/garbage.png" Stretch="Fill">
+                <Image.ToolTip>
+                    <TextBlock>Waste</TextBlock>
+                </Image.ToolTip>
+            </Image>
+            <Label x:Name="WasteLbl" Content="{Binding Waste}" Margin="57.035,136.275,151.965,77.628" FontSize="20" Width="70"/>
+
+            <Image x:Name="ProductionIcon" Margin="0,186.553,227.543,15.264" Source="/Images/factory.png" Stretch="Fill">
+                <Image.ToolTip>
+                    <TextBlock>Production</TextBlock>
+                </Image.ToolTip>
+            </Image>
+            <Label x:Name="ProductionLbl" Content="{Binding Production}" Margin="57.035,204.85,151.965,15.264" FontSize="20" Width="70"/>
+
+            <Image x:Name="FoodCapacityIcon" Margin="120.242,-7.324,89.295,196.031" Source="/Images/lunchbox.png" Stretch="Fill">
+                <Image.ToolTip>
+                    <TextBlock>Food Capacity</TextBlock>
+                </Image.ToolTip>
+            </Image>
+            <Label x:Name="FoodCapacityLbl" Content="{Binding FoodCapacity}" Margin="186.721,8.896,22.279,207.379" FontSize="20" Width="70"/>
+
+            <Image x:Name="PopulationCapacityIcon" Margin="131.207,64,97.279,137.333" Source="/Images/houses.png" Stretch="Fill" Opacity="0.85">
+                <Image.ToolTip>
+                    <TextBlock>Population Capacity</TextBlock>
+                </Image.ToolTip>
+            </Image>
+            <Label x:Name="PopulationCapacityLbl" Content="{Binding PopulationCapacity}" Margin="186.721,73.822,22.279,143.921" FontSize="20" Width="70"/>
+
+            <Image x:Name="IntegrityIcon" Margin="132.946,128.407,97.279,77.628" Source="/Images/puzzlee.png" Stretch="Fill" Opacity="0.85">
+                <Image.ToolTip>
+                    <TextBlock>Integrity</TextBlock>
+                </Image.ToolTip>
+            </Image>
+            <Label x:Name="IntegrityLbl" Content="{Binding Integrity}" Margin="186.721,135.171,22.279,86.849" FontSize="20" Width="70"/>
+
+            <Image x:Name="SocialCapitalIcon" Margin="127.035,186.553,97.279,15.264" Source="/Images/like.png" Stretch="Fill">
+                <Image.ToolTip>
+                    <TextBlock>Social Capital</TextBlock>
+                </Image.ToolTip>
+            </Image>
+
+            <Label x:Name="SocialCapitalLbl" Content="{Binding SocialCapital}" Margin="186.721,203.746,22.279,15.264" FontSize="20" Width="70"/>
+            <Label x:Name="PredictedPeopleCapLbl" HorizontalAlignment="Left" Height="29" Margin="187,58,0,0" VerticalAlignment="Top" Width="51" Opacity="0.5"/>
+            <Label x:Name="PredictedIntegrityLbl" HorizontalAlignment="Left" Height="29" Margin="187,118,0,0" VerticalAlignment="Top" Width="51" RenderTransformOrigin="1.575,-2.493" Opacity="0.5"/>
+            <Label x:Name="PredictedPopulationLbl" HorizontalAlignment="Left" Height="28" Margin="57,59,0,0" VerticalAlignment="Top" Width="51" Opacity="0.5"/>
+            <Label x:Name="PredictedFoodCapLbl" HorizontalAlignment="Left" Height="24" Margin="187,-7,0,0" VerticalAlignment="Top" Width="51" Opacity="0.5"/>
+
+        </Grid>
+
+
+        <!--Events-->
+        <Label x:Name="EventsLbl" Content="Events:" HorizontalAlignment="Left" Margin="267,120.909,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" RenderTransformOrigin="0.92,0.48"/>
+
+        <ListView x:Name="EventsList" HorizontalAlignment="Left" Height="131" Margin="273,153,0,0" VerticalAlignment="Top" Width="222" BorderBrush="#FF606B80" Foreground="#FF0A0D17" Background="#FF9C9090" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="13">
+
+        </ListView>
+
+        <!--Runes-->
+        <Label x:Name="RunesLbl" Content="Runes:" HorizontalAlignment="Left" Height="32" Margin="267,299,0,0" VerticalAlignment="Top" Width="70" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="NehoRunes" HorizontalAlignment="Left" Height="30" Margin="273,336,0,0" VerticalAlignment="Top" Width="222" FontSize="13" FontWeight="Bold" Background="#FF9C9090"/>
+
+    </Grid>
+</Page>

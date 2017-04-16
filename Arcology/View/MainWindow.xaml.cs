@@ -12,14 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Arcology.Pages;
 
-namespace Arcology {
+namespace Arcology.View {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
 	public partial class MainWindow : Window {
+
 		public MainWindow () {
 			InitializeComponent();
+		}
+
+		private void MainWindowOnload ( object sender, RoutedEventArgs e ) {
+			MainFrame.NavigationService.Navigate(new StartPage());
 		}
 	}
 }

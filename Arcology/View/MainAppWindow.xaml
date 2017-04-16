@@ -1,0 +1,37 @@
+﻿<Page x:Class="Arcology.Pages.MainAppWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Arcology.Pages"
+      mc:Ignorable="d" d:DesignWidth="300"
+      Title="MainAppWindow" Width="750" Height="450">
+
+    <Grid>
+        <DockPanel HorizontalAlignment="Left" Height="425" LastChildFill="False" Margin="0,10,0,0" VerticalAlignment="Top" Width="227" RenderTransformOrigin="0.473,0.489" OpacityMask="White">
+            <DockPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF632828" Offset="0"/>
+                    <GradientStop Color="#FF534B4B" Offset="1"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+
+            <StackPanel RenderTransformOrigin="0.5,0.5">
+                <Button x:Name="ProduceBtn" Content="Produce" Background="{x:Null}" Width="240" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="9,10,9,0" Height="35.989" FontSize="15" FontWeight="Bold" Opacity="0.8" OpacityMask="#FF575454" BorderBrush="#FF977575" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="ProduceClick"/>
+                <Button x:Name="ImportFoodBtn" Content="Import Food" Background="{x:Null}" Width="240" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="9,10,9,0" Height="35.989" FontSize="15" FontWeight="Bold" Opacity="0.8" OpacityMask="#FF575454" BorderBrush="#FF977575" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="ImportFoodClick"/>
+                <Button x:Name="CleanBtn" Content="Clean" Background="{x:Null}" Width="240" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="9,10,9,0" Height="35.989" FontSize="15" FontWeight="Bold" Opacity="0.8" OpacityMask="#FF575454" BorderBrush="#FF977575" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="CleanClick"/>
+                <Button x:Name="PropagandaBtn" Content="Propaganda" Background="{x:Null}" Width="240" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="9,10,9,0" Height="35.989" FontSize="15" FontWeight="Bold" Opacity="0.8" OpacityMask="#FF575454" BorderBrush="#FF977575" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="PropagandaClick"/>
+                <Button x:Name="BuildArcBtn" Content="Build Arcology" Background="{x:Null}" Width="240" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="9,10,9,0" Height="35.989" FontSize="15" FontWeight="Bold" Opacity="0.8" OpacityMask="#FF575454" BorderBrush="#FF977575" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="BuildArcologyClick"/>
+                <Button x:Name="ExpandFoodBtn" Content="Expand Food Capacity" Background="{x:Null}" Width="240" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="9,10,9,0" Height="35.989" FontSize="15" FontWeight="Bold" Opacity="0.8" OpacityMask="#FF575454" BorderBrush="#FF977575" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="ExpandFoodClick"/>
+                <Button x:Name="ExpandPopCapBtn" Content="Expand Population Capacity" Background="{x:Null}" Width="240" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="9,10,9,0" Height="35.989" FontSize="15" FontWeight="Bold" Opacity="0.8" OpacityMask="#FF575454" BorderBrush="#FF977575" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="ExpandPopulationClick"/>
+                <Button x:Name="WeAreReadyBtn" Content="We are ready!" Background="{x:Null}" Width="240" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="9,10,9,0" Height="35.989" FontSize="15" FontWeight="Bold" Opacity="0.8" OpacityMask="#FF575454" BorderBrush="#FF977575" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="WeAreReadyClick"/>
+                <Button x:Name="RestartBtn" Content="Restart" Background="{x:Null}" Width="240" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="9,10,9,0" Height="35.989" FontSize="15" FontWeight="Bold" Opacity="0.8" OpacityMask="#FF575454" BorderBrush="#FF977575" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="RestartBtn_OnClick"/>
+            </StackPanel>
+
+        </DockPanel>
+
+        <Frame x:Name="SimulationFrame" HorizontalAlignment="Left" Height="425" Margin="240,10,0,0" VerticalAlignment="Top" Width="505" Loaded="MainAppwindowOnload"/>
+
+
+    </Grid>
+</Page>
