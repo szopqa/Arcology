@@ -52,8 +52,15 @@ namespace Arcology.Pages {
 			//Showing SimulationPage on MainWindow's frame
 			SimulationFrame.NavigationService.Navigate(SimulationPage);
 
-			//Shows result from last session of simulation
-			UpdateResults(this._actionResult);
+			try {
+
+				//Shows result from last session of simulation
+				UpdateResults(this._actionResult);
+
+			}
+			catch (Exception ex) {
+				
+			}
 
 		}
 

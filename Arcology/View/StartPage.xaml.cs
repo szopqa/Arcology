@@ -37,16 +37,21 @@ namespace Arcology.Pages {
 		private void StartButtonClick ( object sender, RoutedEventArgs e ) {
 
 			Result lastSession = new Result();
-			
+
+			/*
 			lastSession = connector.Describe();
+			
 
 			if ( lastSession != null ) {
+			*/
 				this.NavigationService.Navigate(new MainAppWindow(lastSession));
+
+			/*
 			}
 			else {
 				MessageBox.Show("Connection Error!");
 			}
-
+			*/
 		}
 	}
 }
